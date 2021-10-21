@@ -1,0 +1,51 @@
+---
+title: "Lab2"
+author: "Chesnokov Yuriy"
+output: html_document
+---
+
+
+**Task 1**
+
+
+```{r}
+v <- rnorm(100)
+print(v[10])
+print(v[10:20])
+print(v[20:29])
+print(v[v>0])
+```
+
+
+**Task 2**
+
+
+```{r}
+ y <- data.frame(a = rnorm(100), b
+= 1:100, cc = sample(letters, 100, replace = TRUE))
+
+print(y)
+
+
+print(y[c(91:100),c(1:3)])
+
+print(y[c(10:21),c(1:3)])
+
+print(y[10,2])
+print(y[c(1:100),"cc"])
+
+```
+
+
+**Task 3**
+
+
+```{r}
+z <- c(1, 2, 3, NA, 4, NA, 5, NA)
+
+print(z[!is.na(z)])
+
+print(mean(z))
+
+print(mean(z[!is.na(z)]))
+```
