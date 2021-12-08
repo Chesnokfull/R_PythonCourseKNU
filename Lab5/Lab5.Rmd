@@ -1,0 +1,33 @@
+---
+title: "Lab5"
+author: "Chesnokov Yuriy"
+output: html_document
+---
+
+
+**Task 1**
+
+
+```{r}
+setwd("C:/Dev/Lab5R")
+source("Lab5.R")
+pmean("specdata", "sulfate", 10)
+```
+
+
+**Task 2**
+
+
+```{r}
+complete("specdata", c(2, 4, 8, 10, 12))
+```
+
+
+**Task 3**
+
+
+```{r}
+cr <- corr("specdata",300)
+head(cr)
+summary(cr)
+```
