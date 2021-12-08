@@ -1,0 +1,57 @@
+---
+title: "Lab3"
+author: "Chesnokov Yuriy"
+output: html_document
+---
+
+
+**Task 1**
+
+
+```{r}
+add2 <- function(x, y) {
+  x+y
+}
+add2(2,5)
+```
+
+
+**Task 2**
+
+
+```{r}
+above <- function(x, n=10) {
+  x[x>n]
+}
+above(c(2,5,7,11,13,15))
+```
+
+
+**Task 3**
+
+
+```{r}
+my_ifelse <- function(x,exp,n) {
+  if((exp=="<")|(exp==">")|(exp=="<=")|(exp==">=")|(exp=="==")){
+    y <- x[get(exp)(x,n)]
+    if (length(y)==0){y <- NULL}
+  } else{
+    y <- x
+  }
+  y
+}
+my_ifelse(c(1,2,3),">=",2)
+```
+
+
+**Task 4**
+
+
+```{r}
+columnmean <- function(x, removeNA=TRUE) {
+  if(removeNA==TRUE){ colMeans(na.omit(x))}
+  else{ colMeans(x)}
+}
+x = matrix(c(1:7,NA),6,4)
+columnmean(x)
+```
