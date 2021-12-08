@@ -1,0 +1,83 @@
+---
+title: "Lab4"
+author: "Chesnokov Yuriy"
+output: html_document
+---
+
+
+**Task 1**
+
+
+```{r}
+setwd("C:/Dev/Lab4R")
+hw1 <- read.csv("hw1_data.csv", header = T, sep = ",")
+names(hw1)
+```
+
+
+**Task 2**
+
+
+```{r}
+hw1[1:6,]
+```
+
+
+**Task 3**
+
+
+```{r}
+nrow(hw1)
+```
+
+
+**Task 4**
+
+
+```{r}
+x <- nrow(hw1)
+hw1[(x-10):x,]
+```
+
+
+**Task 5**
+
+
+```{r}
+colSums(is.na(hw1))[1]
+```
+
+
+**Task 6**
+
+
+```{r}
+mean(hw1$Ozone)
+mean(hw1$Ozone, na.rm = T)
+```
+
+
+**Task 7**
+
+
+```{r}
+hw1p <- na.omit(hw1)
+hw1p[hw1p$Ozone>31&hw1p$Temp>90,]
+mean(hw1p[hw1p$Ozone>31&hw1p$Temp>90,][,2])
+```
+
+
+**Task 8**
+
+
+```{r}
+mean(hw1[hw1[,5]==6,]$Temp)
+```
+
+
+**Task 9**
+
+
+```{r}
+max(hw1p[hw1p[,5]==5,1])
+```
