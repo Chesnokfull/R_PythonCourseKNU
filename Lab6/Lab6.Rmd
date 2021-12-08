@@ -1,0 +1,109 @@
+---
+title: "Lab6"
+author: "Chesnokov Yuriy"
+output: html_document
+---
+
+
+**Task 1**
+
+
+```{r}
+x <-  matrix(rnorm(50),10,5)
+x
+```
+
+
+**Task 2**
+
+
+```{r}
+apply(x, 2, max)
+```
+
+
+**Task 3**
+
+
+```{r}
+colMeans(x)
+```
+
+
+**Task 4**
+
+
+```{r}
+apply(x, 1, min)
+```
+
+
+**Task 5**
+
+
+```{r}
+apply(x, 2, sort)
+```
+
+
+**Task 6**
+
+
+```{r}
+func1 <- function(m) {
+  for(i in 1:ncol(m)){
+    print(m[m[,i]<0,i])
+  }
+}
+func1(x)
+```
+
+
+**Task 7**
+
+
+```{r}
+s <- c()
+for(i in 1:ncol(x)){
+  if(sum(x[,i]>2)>0){
+    s <- c(s,TRUE)
+  }else{
+    s <- c(s,FALSE)
+  }
+}
+s
+```
+
+
+**Task 8**
+
+
+```{r}
+list1 <- list(observationA = c(1:5, 7:3), observationB = matrix(1:6, nrow=2))
+lapply(list1, sum)
+```
+
+
+**Task 9**
+
+
+```{r}
+lapply(list1, max)
+sapply(list1, max)
+lapply(list1, min)
+sapply(list1, min)
+```
+
+
+**Task 10**
+
+
+```{r}
+data(InsectSprays)
+a <- c()
+for(i in levels(InsectSprays$spray)){
+  a <- c(a,mean(InsectSprays[InsectSprays$spray==i,1]))
+}
+df1 <- data.frame(a,b=levels(InsectSprays$spray))
+df1
+```
